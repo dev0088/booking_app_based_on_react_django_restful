@@ -1,0 +1,27 @@
+.record-ctl {
+    width: 560px;
+    margin: 0 auto;
+}
+
+.progress-bar {
+    width: 250px !important;
+}
+
+#myProgress {
+    width: 100%;
+    background-color: grey;
+}
+
+#myBar {
+    height: 7px;
+    background-color: green;
+}
+
+.countdown-label {
+    /*display: inline-block;*/
+}
+
+.countdown-bar {
+    /*display: inline-block;*/
+    /*width: 280px;*/
+}

@@ -1,0 +1,193 @@
+.slogan-description-background {
+	width: 100%;
+	border-radius: 0rem;
+	margin-bottom: 0rem;
+	margin-top: 3.5rem;
+	background-color: transparent!important;
+	position: absolute;
+}
+.slogan-description-background h1, 
+.slogan-description-background p {
+	color: #20426f!important;
+}
+.home-background-image {
+	width: 100%;
+  height: 100%;
+}
+.my-account{
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.my-account button{
+  background-color: transparent !important;
+}
+.my-account button span{
+  color: white !important
+}
+.ml-auto .d-block a{
+  color: white !important;
+}
+.ml-auto .d-block a svg{
+  color: white !important;
+  fill: white !important;
+}
+
+.details-content {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 30px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.02);
+  border-radius: 3px;
+  margin-bottom: 30px; }
+  .details-content img {
+    height: 240px;
+    margin: 0 auto; }
+  .details-content .favorite {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer; }
+  .details-content h5 {
+    padding-top: 10px;
+    padding-bottom: 5px; }
+  .details-content .price {
+    margin: 0;
+    color: #258df2;
+    padding-bottom: 10px; }
+@media only screen and (max-width: 575px) {
+  .my-account button{
+    text-align: left !important;
+  }
+  div[role="presentation"],
+  div[role="menu"] {
+    width: 91vw !important;
+  }
+}
+
+.service_category_image {
+  height: 62px!important;
+  margin-bottom: 1rem!important;
+}
+
+.services-title {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 30px;
+  text-align: center;
+  border-radius: 3px;
+  margin-bottom: 30px;
+  background: #fff;
+}
+
+.services-content {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 30px;
+  text-align: left;
+  border-radius: 3px;
+  margin-bottom: 30px; }
+
+.service_title_td{
+  text-align: left;
+  border-bottom: 1px solid #eceeef;
+  border-top: none!important;
+  vertical-align: middle!important;
+  width: 90%;
+}
+
+.service_price_currency_td{
+  text-align: right;
+  border-bottom: 1px solid #eceeef;
+  border-top: none!important;
+  vertical-align: middle!important;
+  font-weight: 500;
+  color: black;
+}
+
+.service_price_td{
+  text-align: right;
+  border-bottom: 1px solid #eceeef;
+  border-top: none!important;
+  vertical-align: middle!important;
+  font-weight: 500;
+  color: black;
+}
+
+.user-slide-row {
+  display: inline-flex;
+}
+
+.user_name {
+  /*font-size: 2rem;
+  font-weight: 400;
+  text-align: center;*/
+  font-size: 30px;
+  color: black;
+  font-weight: 300;
+  line-height: 25px;
+  text-align: left;
+  margin: 2% 10%;
+}
+
+.user_image {
+  width: 100%;
+}
+
+.user_image_th {
+  padding: 0rem;
+  vertical-align: middle!important;
+  width: 30%;
+}
+
+.user_overview {
+  max-height: 230px;
+  overflow-y: auto;
+  margin: 5% 5% 5% 5% !important;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #2a3134;
+}
+
+.slick-slider.slick-initialized {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+button.slick-arrow.slick-prev {
+  color: black;
+  width: 30px;
+  height: 30px;
+  margin-left: 5rem;
+  background: #343a40;
+}
+
+button.slick-arrow.slick-next  {
+  color: black;
+  width: 30px;
+  height: 30px;
+  margin-right: 5rem;
+  background: #343a40;
+}
+
+@media screen and (max-width: 992px) {
+  button.slick-arrow.slick-prev {
+    margin-left: 15px;
+  }
+  button.slick-arrow.slick-next {
+    margin-right: 15px;
+  }
+  .slick-slider.slick-initialized {
+    padding-left: 0rem!important;
+    padding-right: 0rem!important;
+  }
+  .user_overview {
+    margin: 5% 5% 5% 5% !important;
+  }
+}

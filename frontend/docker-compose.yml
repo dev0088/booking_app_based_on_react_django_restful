@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  brighteyes_frontend:
+    container_name: brighteyes_frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/usr/src/brighteyes_frontend'
+      # - '/usr/src/brighteyes_frontend/node_modules'
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development

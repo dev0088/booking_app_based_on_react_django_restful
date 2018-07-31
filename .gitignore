@@ -1,0 +1,16 @@
+env
+env3
+node_modules
+.tox
+*.pyc
+db.sqlite3
+build
+yarn-error.log
+.DS_Store
+backend/static
+backend/staticlist
+backend/static_backend
+frontend/build
+frontend/package-lock.json
+logs
+backend/talent_picture/config_aws.py
