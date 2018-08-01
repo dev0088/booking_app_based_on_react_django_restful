@@ -29,8 +29,9 @@ SECRET_KEY = '-7c45f8_-^7p#!d_30^#a!hu%#4s9me%x=^x7&91)b=q&09cwc'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'www.brighteyes.co.ua',
+    'www.brighteyes.com.ua',
     'localhost',
+    '52.47.158.239',
     'localhost:3000',
     '127.0.0.1'
 ]

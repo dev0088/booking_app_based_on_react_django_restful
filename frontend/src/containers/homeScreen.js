@@ -222,7 +222,9 @@ class HomeScreen extends Component {
                   <tr>
                     <th>
                       <div className="user_overview">
-                        {users[key].overview}
+                        <p>
+                          {users[key].overview}
+                        </p>
                       </div>
                     </th>
                   </tr>
@@ -257,11 +259,14 @@ class HomeScreen extends Component {
         <Row className="pt-5">
           <Col xs="4">
             <div className="services-title">
-              <h3><i className="icon-fire" />Services</h3>
+              <h3><i className="icon-fire" />ПОСЛУГИ ТА ЦІНИ</h3>
             </div>
           </Col>
           <Col xs="8" className="services-content">
-            Don’t waste your time for awkward DIY efforts at home. Visiting THE BROW BAR is the first step on the way to your new beautiful, easy and happy life.
+            <p>
+            Не марнуй свій час – приходь до нас! Наші майстри – найкращі в Україні. Вони перетворять тебе на королеву!
+Працюємо виключно з професійною косметикою та матеріалами.
+            </p>
           </Col>
         </Row>
         { this.renderServices() }

@@ -40,4 +40,5 @@ class Service(models.Model):
 
   class Meta:
     ordering = ('service_category', 'title', 'price')
+    unique_together = ('title', 'id')
     managed = True

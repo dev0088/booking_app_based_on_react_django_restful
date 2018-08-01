@@ -28,3 +28,8 @@ class ServiceCategory(models.Model):
 
   def __str__(self):
     return self.title
+
+  class Meta:
+    ordering = ('title',)
+    managed = True
+    unique_together = ('title', 'id')
