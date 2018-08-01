@@ -35,3 +35,4 @@ export const GET_ALL_BOOKINGS = createRequestTypes('GET_ALL_BOOKINGS');
 export const GET_ALL_SERVICES = createRequestTypes('GET_ALL_SERVICES');
 export const GET_ALL_REMINDERS = createRequestTypes('GET_ALL_REMINDERS');
 export const GET_ALL_USER_REVIEWS = createRequestTypes('GET_ALL_USER_REVIEWS');
+export const SELECTED_USER = 'SELECTED_USER';

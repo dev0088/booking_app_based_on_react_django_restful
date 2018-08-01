@@ -2,3 +2,63 @@
 	margin-top: 30px;
 	min-height: 777px;
 }
+
+.user_screen_list {
+	max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user_screen_listitem {
+
+}
+.user_screen_card {
+	/*max-width: 600px;*/
+}
+
+.user_screen_avatar {
+  height: 74px!important;
+  width: 74px!important;
+  object-fit: cover!important;
+  object-position: 0 0!important;
+}
+
+.user_screen_card_title {
+  margin-bottom: 16;
+  font-size: 14
+}
+
+.user_screen_card_header {
+  display: inline-block;
+}
+
+.user_screen_card_header_avatar {
+  display: inline-block!important;
+  font-size: 18px;
+}
+
+.user_screen_card_header_avatar_title_div {
+  display: inline-block!important;
+  font-size: 14px;
+  padding-top: 0px!important;
+  padding-bottom: 0px!important;
+}
+
+.user_screen_card_header_avatar_title {
+  display: inline-block!important;
+  font-size: 14px;
+  padding-top: 0px!important;
+  padding-bottom: 0px!important;
+  top: 13px;
+}
+
+.user_screen_card_review_container {
+	padding-top: 0px!important;
+}
+
+.user_screen_card_review_text {
+  display: inline-block!important;
+  font-size: 14px;
+  padding-top: 0px!important;
+  padding-bottom: 0px!important;
+}

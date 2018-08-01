@@ -13,6 +13,7 @@ import serviceReducer from './service.js'
 import shopReducer from './shop.js'
 import users, * as fromUser from './user.js'
 import userReviewsReducer from './user_reviews.js'
+import selectUserReducer from './select_user.js'
 
 export default combineReducers({
   auth: auth,
@@ -27,7 +28,8 @@ export default combineReducers({
   services: serviceReducer,
   shops: shopReducer,
   users: users,
-  userReviews: userReviewsReducer
+  userReviews: userReviewsReducer,
+  selectedUser: selectUserReducer
 })
 
 

@@ -7,7 +7,8 @@ import {
 import {List, ListItem} from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
 import Subheader from 'material-ui/Subheader';
-import {Card, CardHeader, CardText} from 'material-ui/Card';
+import { Card, CardHeader, CardTitle, CardText, CardContent } from 'material-ui/Card';
+import { Typography } from 'material-ui/styles/typography';
 import ReactStars from 'react-stars'
 import Rating from 'react-rating'
 import { connect } from 'react-redux'
@@ -33,7 +34,7 @@ class UsersScreen extends Component {
       bookings: props.bookings.value,
       userReviews: props.userReviews.value
     };
-
+    // this.handleBooking = this.handleBooking.bind(this);
 	}
 	componentWillMount() {
     this.props.brighteyesActions.getUsers()
@@ -84,12 +85,15 @@ class UsersScreen extends Component {
         sum_count ++
       }
     })
-    console.log('=== sum_marks, sum_count: ', sum_marks, sum_count)
     if (sum_count === 0){
       return 0
     }
 
     return sum_marks / sum_count
+  }
+
+  handleBooking = (user, item) => {
+    console.log('=== clicked item: ', user, item)
   }
 
   renderUsersView () {
@@ -98,33 +102,46 @@ class UsersScreen extends Component {
     Object.keys(userReviews).map((key) => {
       let user = userReviews[key]
       let averageReviewMarks = this.getAverageReviewMarks(user.bookings)
-
+      let numberOfReviews = user.bookings ? user.bookings.length : 0
       let item = (
-        <ListItem>
-          <Card>
-            <CardHeader
-              avatar={
-                <Avatar src={`${appConfig.assetServer}${user.image}`}/>
-              }
-              title={`${user.first_name} ${user.last_name}`}
-            />
-            <CardText>
-              <Rating
-                placeholderRating={averageReviewMarks}
-                emptySymbol={<img src="images/star-grey.png" className="icon" />}
-                placeholderSymbol={<img src="../images/star-yellow.png" className="icon" />}
-                fullSymbol={<img src="images/star-yellow.png" className="icon" />}
-                readonly
-              />
-            </CardText>
-          </Card>
-        </ListItem>
+        <Link to="/book_by_user">
+          <ListItem className="user_screen_listitem" onClick={(event)=>this.handleBooking(user, event)}>
+            <Card className="user_screen_card">
+                <CardText>
+                  <div className="user_screen_card_header">
+                    <Avatar 
+                      src={`${appConfig.assetServer}${user.image}`}
+                      className="user_screen_avatar"/>
+                      <CardTitle
+                        title={`${user.first_name} ${user.last_name}`}
+                        subtitle={user.service}
+                        className="user_screen_card_header_avatar_title"
+                        />
+                  </div>
+                </CardText>
+                <CardText className='user_screen_card_review_container'>
+                  <Rating
+                    placeholderRating={averageReviewMarks}
+                    emptySymbol={<img src="images/star-grey.png" className="icon" />}
+                    placeholderSymbol={<img src="../images/star-yellow.png" className="icon" />}
+                    fullSymbol={<img src="images/star-yellow.png" className="icon" />}
+                    readonly
+                  />
+                  <CardTitle
+                    title={''}
+                    subtitle={`${numberOfReviews} reviews`}
+                    className="user_screen_card_review_text"
+                    />
+                </CardText>
+            </Card>
+          </ListItem>
+        </Link>
       )
       items.push(item)
     })
 
     return (
-      <List>
+      <List className="user_screen_list">
         <Subheader>Previous chats</Subheader>
         { items }
       </List>

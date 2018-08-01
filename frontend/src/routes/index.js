@@ -11,6 +11,7 @@ import TemplateTopbarOfComingSoon from '../components/templateTopbarOfComingSoon
 // import ComingSoonScreen from '../containers/comingSoonScreen';
 import HomeScreen from '../containers/homeScreen';
 import UsersScreen from '../containers/usersScreen';
+import BookingScreen from '../containers/bookingScreen';
 
 // import LoginScreen from '../containers/loginScreen';
 // import ForgotPasswordScreen from '../containers/forgotPasswordScreen';
@@ -47,10 +48,19 @@ const Index = () => (
     />
 
     <Route
-      patt="/book_online"
+      path="/book_online"
       render={props => (
         <TemplateTopbar>
           <UsersScreen {...props} />
+        </TemplateTopbar>
+      )}
+    />
+
+    <Route
+      path="/book_by_user"
+      render={props => (
+        <TemplateTopbar>
+          <BookingScreen {...props} />
         </TemplateTopbar>
       )}
     />

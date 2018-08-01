@@ -102,4 +102,11 @@ export const getUserReviews = () => ({
     }
 })
 
+export const selectUser = (user) => {
+    return {
+        type: types.SELECTED_USER,
+        payload: user
+    }
+}
+
 

@@ -2,9 +2,15 @@ from rest_framework import serializers
 
 from .models import User
 from booking.serializers import BookingSerializer
+from service.serializers import ServiceSerializer
 
 class GeneralUserSerializer(serializers.ModelSerializer):
     """Serializers registration requests and creates a new user."""
+    service = serializers.SlugRelatedField(
+        many=False,
+        read_only=True,
+        slug_field='title'
+      )
     class Meta:
         model = User
         fields = ['email', 'username', 'first_name', 'last_name', 'service', 'image', 'phone_number', 'overview']
@@ -39,7 +45,13 @@ class RegistrationSerializer(serializers.ModelSerializer):
 class UserReviewsSerializer(serializers.ModelSerializer):
     """Serializers registration requests and creates a new user."""
     bookings = BookingSerializer(many=True, read_only=True)
-    
+    # serivce = ServiceSerializer(many=False, read_only=True)
+    service = serializers.SlugRelatedField(
+        many=False,
+        read_only=True,
+        slug_field='title'
+      )
+
     class Meta:
         model = User
         fields = ['username', 'first_name', 'last_name', 'service', 'image', 'bookings']
