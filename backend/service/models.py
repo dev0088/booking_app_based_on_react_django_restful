@@ -12,6 +12,7 @@ class Service(models.Model):
   image = models.ImageField(upload_to='service', blank=True)
   externalURL = models.URLField(blank=True)
   price = MoneyField(max_digits=14, decimal_places=2, default_currency='UAH')
+  time = models.IntegerField(blank=False, default=30)
   service_category = models.ForeignKey(ServiceCategory, related_name='services', on_delete=models.SET_DEFAULT, null=True, blank=True, default=None)
 
   def url(self):

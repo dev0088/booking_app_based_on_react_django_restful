@@ -4,19 +4,15 @@ import {
   Col, 
   Jumbotron, 
   Table, 
-  Carousel, 
-  CarouselIndicators, 
+  // Carousel, 
+  // CarouselIndicators, 
   UncontrolledCarousel
 } from 'reactstrap'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import ReactPlayer from 'react-player'
-import Truncate from 'react-truncate-html'
-import RaisedButton from 'material-ui/RaisedButton'
 import GridListinlineCustom from '../components/grid-list/gridlistInlineCustom'
-import { Link } from 'react-router-dom'
 import Img from 'react-image'
-import ImageGallery from 'react-image-gallery';
+// import ImageGallery from 'react-image-gallery';
 import Slider from "react-slick";
 import * as brighteyesActions from  '../actions/brighteyesActions'
 import appConfig from '../constants/config'
@@ -88,7 +84,6 @@ class HomeScreen extends Component {
 
   renderServices () {
     const { 
-      services,
       serviceCategories
     } = this.state;
 
@@ -97,7 +92,7 @@ class HomeScreen extends Component {
       let rowCategories = []
       for (let j = i; j < i+3; j ++){
         let category =  (
-            <Col xs="12" md="4" className="pt-3 pt-md-0">
+            <Col key={`service_category_${j}`} xs="12" md="4" className="pt-3 pt-md-0">
               <div className="details-content">
                 <Img src={`${appConfig.assetServer}${serviceCategories[j].image}`} 
                   alt="" 
@@ -110,7 +105,7 @@ class HomeScreen extends Component {
                     serviceCategories[j].services && Object.keys(serviceCategories[j].services).map((key) => {
                       const { title, price_currency, price } = serviceCategories[j].services[key]
                       return (
-                        <tr>
+                        <tr key={`service_category_service_${key}`}>
                           <td className="service_title_td">
                             {title}
                           </td>
@@ -133,7 +128,7 @@ class HomeScreen extends Component {
       }
 
       let rowCategory = (
-          <Row className="pt-3">
+          <Row key={`row_category_${i}`} className="pt-3">
             { rowCategories }
           </Row>
         )
@@ -148,7 +143,7 @@ class HomeScreen extends Component {
     let items = []
     const { places } = this.state
     Object.keys(places).map((key) => {
-      const { title, description, image, shop } = places[key]
+      const { description, image } = places[key]
       if (image) {
         let item =   {
           src: `${appConfig.assetServer}${image}`,
@@ -170,7 +165,7 @@ class HomeScreen extends Component {
 
     let items = []
     Object.keys(galleries).map((key) => {
-      const { title, description, image, shop } = galleries[key]
+      const { title, image } = galleries[key]
       if (image) {
         let item =   {
           img: `${appConfig.assetServer}${image}`,
@@ -201,34 +196,38 @@ class HomeScreen extends Component {
     Object.keys(users).map((key) => {
 
       let item = (
-        <div>
+        <div key={`home_user_view_${key}`}>
           <Table>
             <tbody>
               <tr>
-                <th className="user_image_th">
+                <td className="user_image_th">
                   <Img src={`${appConfig.assetServer}${users[key].image}`} 
                     alt="" 
                     className="user_image"
                   />                
-                </th>
-                <th>
-                  <tr>
-                    <th>
-                      <div className="user_name">
-                        {`${users[key].first_name} ${users[key].last_name}`}
-                      </div>
-                    </th>
-                  </tr>
-                  <tr>
-                    <th>
-                      <div className="user_overview">
-                        <p>
-                          {users[key].overview}
-                        </p>
-                      </div>
-                    </th>
-                  </tr>
-                </th>
+                </td>
+                <td>
+                  <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div className="user_name">
+                          {`${users[key].first_name} ${users[key].last_name}`}
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="user_overview">
+                          <p>
+                            {users[key].overview}
+                          </p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                  </table>
+                </td>
               </tr>
 
             </tbody>

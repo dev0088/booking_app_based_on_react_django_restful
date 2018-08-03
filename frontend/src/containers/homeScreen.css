@@ -129,9 +129,9 @@
   font-size: 30px;
   color: black;
   font-weight: 300;
-  line-height: 25px;
+  line-height: 2.5rem;
   text-align: left;
-  margin: 2% 10%;
+  margin: 2% 5%;
 }
 
 .user_image {
@@ -147,7 +147,7 @@
 .user_overview {
   max-height: 230px;
   overflow-y: auto;
-  margin: 5% 5% 5% 5% !important;
+  margin: 0% 5% 0% 5% !important;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -188,6 +188,6 @@ button.slick-arrow.slick-next  {
     padding-right: 0rem!important;
   }
   .user_overview {
-    margin: 5% 5% 5% 5% !important;
+    margin: 0% 5% 0% 5% !important;
   }
 }

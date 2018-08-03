@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import {
-  Nav,
   Navbar,
-  Collapse,
   NavbarToggler,
 } from 'reactstrap';
 import { Link, withRouter } from 'react-router-dom';
-import RaisedButton from 'material-ui/RaisedButton';
-import Popover, {PopoverAnimationVertical} from 'material-ui/Popover';
-import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-import Divider from 'material-ui/Divider';
-import { SidebarNavItems } from './sidebar';
 
 import './header.css'
 
@@ -22,16 +15,6 @@ const styles = {
   }
 }
 class Header extends Component {
-  // static propTypes = {
-  //   member: PropTypes.shape({
-  //     firstName: PropTypes.string,
-  //     email: PropTypes.string,
-  //   }),
-  //   logout: PropTypes.func.isRequired,
-  //   history: PropTypes.shape({
-  //     push: PropTypes.func.isRequired,
-  //   }).isRequired,
-  // }
 
   static defaultProps = {
     member: {},
@@ -63,11 +46,12 @@ class Header extends Component {
       subMenuOpen: false,
     });
   };
+
   render() {
-    const { auth } = this.props;
+    // const { auth } = this.props;
     // const loggedIn = (member && member.email);
 		// const loggedIn = true
-		const loggedIn = (auth && auth.access && auth.access.email);
+		// const loggedIn = (auth && auth.access && auth.access.email);
     return (
       <header>
         <Navbar dark color="dark" expand="sm" className="fixed-top">
@@ -78,17 +62,8 @@ class Header extends Component {
 
           </Link>
           
-          <Link to="/home#Services">
+          <Link to="/home">
             <MenuItem style={styles.menuitem} primaryText="Services" />
-          </Link>
-          <Link to="/home#Services">
-            <MenuItem style={styles.menuitem} primaryText="Team" />
-          </Link>
-          <Link to="/home#Services">
-            <MenuItem style={styles.menuitem} primaryText="Places" />
-          </Link>
-          <Link to="/home#Services">
-            <MenuItem style={styles.menuitem} primaryText="Contact" />
           </Link>
           <Link to="/book_online">
             <MenuItem style={styles.menuitem} primaryText="Book Online" />

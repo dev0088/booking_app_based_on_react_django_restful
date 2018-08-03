@@ -5,9 +5,7 @@ import {
   Form,
   Alert,
 } from 'reactstrap';
-import {List, ListItem} from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
-import Subheader from 'material-ui/Subheader';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -15,12 +13,7 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import DayPicker from 'react-day-picker';
 import Panel from '../components/panel';
-import { withStyles } from '@material-ui/core/styles';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { connect } from 'react-redux'
@@ -29,23 +22,9 @@ import { Link } from 'react-router-dom'
 import * as moment from 'moment-timezone';
 
 import * as brighteyesActions from  '../actions/brighteyesActions'
-import appConfig from '../constants/config'
 import Loading from '../components/loading';
 import './bookingScreen.css'
 import 'react-day-picker/lib/style.css';
-
-const styles = theme => ({
-  root: {
-    width: '100%',
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
-  },
-  flatPrimary: {
-    color: "#258df2",
-  },
-});
 
 const selectItemStyle = {
   'whiteSpace': 'preWrap'
@@ -97,7 +76,6 @@ class BookingScreen extends Component {
       selectedUser,
       reminders,
       serviceCategories,
-      userReviews,
       bookings,
       setBook
     } = nextProps;
@@ -162,9 +140,6 @@ class BookingScreen extends Component {
     const {
       services, 
       selectedUser, 
-      selectedService, 
-      bookings,
-      booking_time_area_in_day
     } = this.state
 
     // Set available book time area.
@@ -216,7 +191,6 @@ class BookingScreen extends Component {
     
     const { 
       selectedUser,
-      selectedService,
       selectedBookingTime,
       firstName,
       lastName,
@@ -251,7 +225,10 @@ class BookingScreen extends Component {
   }
 
   renderUserView() {
-    const { reminders, selectedUser } = this.state
+    const { 
+      // reminders, 
+      selectedUser 
+    } = this.state
 
     return (
       <Form>
@@ -285,7 +262,7 @@ class BookingScreen extends Component {
 
   renderBookingView() {
     const { 
-      reminders, 
+      // reminders, 
       selectedUser, 
       selectedBookingTime,
       selectedServiceDuration,
@@ -308,9 +285,9 @@ class BookingScreen extends Component {
 
         <Row>
           <Col>
-            <h5> 
+            <Typography> 
               Booking time
-            </h5>
+            </Typography>
           </Col>
         </Row>
         <Row>
@@ -346,7 +323,6 @@ class BookingScreen extends Component {
   }
 
   renderClientInfoView() {
-    const { error } = this.state;
     return (
       <Form>
         <TextField

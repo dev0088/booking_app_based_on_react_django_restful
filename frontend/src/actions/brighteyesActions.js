@@ -130,16 +130,13 @@ export const setBooking = (user, booking, client) => ({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           user: {
-            ...
-            user
+            ...user
           },
           booking: {
-            ...
-            booking
+            ...booking
           },
           client: {
-            ...
-            client
+            ...client
           }  
         }),
         types: [

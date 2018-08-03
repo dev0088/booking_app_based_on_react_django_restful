@@ -2,8 +2,6 @@ import React, {Component} from 'react'
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-import gridImage from '../../images/grid.jpg';
-import gridImageLarge from '../../images/grid-large.jpg';
 
 const styles = {
   root: {

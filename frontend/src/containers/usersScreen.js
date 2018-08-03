@@ -1,22 +1,12 @@
 import React, {Component} from 'react'
-import { 
-  Row, 
-  Col, 
-  Table, 
-} from 'reactstrap'
 import {List, ListItem} from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
 import Subheader from 'material-ui/Subheader';
-import { Card, CardHeader, CardTitle, CardText, CardContent } from 'material-ui/Card';
-import { Typography } from 'material-ui/styles/typography';
-import ReactStars from 'react-stars'
+import { Card, CardTitle, CardText } from 'material-ui/Card';
 import Rating from 'react-rating'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
-import Img from 'react-image'
-import Slider from "react-slick"
-import ReactRating from 'react-rating'
 import * as brighteyesActions from  '../actions/brighteyesActions'
 import appConfig from '../constants/config'
 import './usersScreen.css'
@@ -58,7 +48,6 @@ class UsersScreen extends Component {
       reminders,
       services,
       serviceCategories,
-      bookings,
       userReviews
     } = nextProps;
 
@@ -92,18 +81,19 @@ class UsersScreen extends Component {
   }
 
   handleBooking = (user, event) => {
+    console.log('=== clicked event: ', user, event)
     this.props.brighteyesActions.selectUser(user)
   }
 
   renderUsersView () {
-    const { users, bookings, userReviews } = this.state
+    const { userReviews } = this.state
     let items = []
     Object.keys(userReviews).map((key) => {
       let user = userReviews[key]
       let averageReviewMarks = this.getAverageReviewMarks(user.bookings)
       let numberOfReviews = user.bookings ? user.bookings.length : 0
       let item = (
-        <Link to="/book_by_user">
+        <Link to="/book_by_user" key={`user_list_item_${key}`}>
           <ListItem className="user_screen_listitem" onClick={(event)=>this.handleBooking(user, event)}>
             <Card className="user_screen_card">
                 <CardText>

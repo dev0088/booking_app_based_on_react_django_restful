@@ -3,20 +3,23 @@ import PropTypes from 'prop-types';
 import { Row, Col } from 'reactstrap';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Link } from 'react-router-dom';
+import './error.css'
 
 const Error = ({ title, content }) => (
-  <Row>
-    <Col lg="4">
-      <h2>{title}</h2>
-      <p>{content}</p>
-      <Link to="/">
-        <RaisedButton
-          label="Go Home"
-          primary={true}
-        />
-      </Link>
-    </Col>
-  </Row>
+  <div className="error_container">
+    <Row>
+      <Col lg="4">
+        <h2>{title}</h2>
+        <p>{content}</p>
+        <Link to="/">
+          <RaisedButton
+            label="Go Home"
+            primary={true}
+          />
+        </Link>
+      </Col>
+    </Row>
+  </div>
 );
 
 Error.propTypes = {

@@ -1,0 +1,9 @@
+.error_container {
+	margin-top: 55px;
+}
+
+@media screen and (max-width: 992px) {
+  .error_container {
+		margin-top: 112px;
+	}
+}

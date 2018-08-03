@@ -54,4 +54,4 @@ class UserReviewsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name', 'service', 'image', 'bookings']
+        fields = ['username', 'first_name', 'last_name', 'service', 'image', 'email', 'phone_number', 'bookings']
