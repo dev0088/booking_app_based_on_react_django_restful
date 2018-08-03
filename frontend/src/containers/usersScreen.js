@@ -75,7 +75,6 @@ class UsersScreen extends Component {
     let sum_count = 0
     Object.keys(user_bookings).map((key) => {
       let user_booking = user_bookings[key]
-      console.log('=== user_booking.state: ', user_booking.state)
       if ((user_booking.state === 'completed' || 
           user_booking.state === 'canceled' ||
           user_booking.state === 'timeout') 
@@ -92,8 +91,8 @@ class UsersScreen extends Component {
     return sum_marks / sum_count
   }
 
-  handleBooking = (user, item) => {
-    console.log('=== clicked item: ', user, item)
+  handleBooking = (user, event) => {
+    this.props.brighteyesActions.selectUser(user)
   }
 
   renderUsersView () {
@@ -149,10 +148,9 @@ class UsersScreen extends Component {
   }
 
   render() {
-    console.log('=== state: ', this.state)
     return (
       <div className='users_screen_container'>
-        {this.renderUsersView()}
+        { this.renderUsersView() } 
       </div>
     );
   }

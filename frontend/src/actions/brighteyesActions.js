@@ -4,109 +4,146 @@ import * as types from './actionTypes'
 
 export const getBrightEyesInfo = () => ({
 	  [RSAA]: {
-        endpoint: `${apiConfig.url}/brighteyes_info/all`,
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-        types: [
-          types.BRIGHTEYES_INFO.REQUEST, types.BRIGHTEYES_INFO.SUCCESS, types.BRIGHTEYES_INFO.FAILURE
-        ]
-    }
+    endpoint: `${apiConfig.url}/brighteyes_info/all`,
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+    types: [
+      types.BRIGHTEYES_INFO.REQUEST, types.BRIGHTEYES_INFO.SUCCESS, types.BRIGHTEYES_INFO.FAILURE
+    ]
+  }
 })
 
 export const getUsers = () => ({
 	  [RSAA]: {
-        endpoint: `${apiConfig.url}/auth/users/`,
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json'},
-        types: [
-          types.GET_ALL_USERS.REQUEST, types.GET_ALL_USERS.SUCCESS, types.GET_ALL_USERS.FAILURE
-        ]
-    }
+    endpoint: `${apiConfig.url}/auth/users/`,
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json'},
+    types: [
+      types.GET_ALL_USERS.REQUEST, types.GET_ALL_USERS.SUCCESS, types.GET_ALL_USERS.FAILURE
+    ]
+  }
 })
 
 export const getShops = () => ({
 	  [RSAA]: {
-        endpoint: `${apiConfig.url}/shops/all`,
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-        types: [
-          types.GET_ALL_SHOPS.REQUEST, types.GET_ALL_SHOPS.SUCCESS, types.GET_ALL_SHOPS.FAILURE
-        ]
-    }
+    endpoint: `${apiConfig.url}/shops/all`,
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+    types: [
+      types.GET_ALL_SHOPS.REQUEST, types.GET_ALL_SHOPS.SUCCESS, types.GET_ALL_SHOPS.FAILURE
+    ]
+  }
 })
 
 
 export const getPlaces = () => ({
 	  [RSAA]: {
-        endpoint: `${apiConfig.url}/places/all`,
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-        types: [
-          types.GET_ALL_PLACES.REQUEST, types.GET_ALL_PLACES.SUCCESS, types.GET_ALL_PLACES.FAILURE
-        ]
-    }
+    endpoint: `${apiConfig.url}/places/all`,
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+    types: [
+      types.GET_ALL_PLACES.REQUEST, types.GET_ALL_PLACES.SUCCESS, types.GET_ALL_PLACES.FAILURE
+    ]
+  }
 })
 
 export const getServices = () => ({
 	  [RSAA]: {
-        endpoint: `${apiConfig.url}/services/all`,
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-        types: [
-          types.GET_ALL_SERVICES.REQUEST, types.GET_ALL_SERVICES.SUCCESS, types.GET_ALL_SERVICES.FAILURE
-        ]
-    }
+    endpoint: `${apiConfig.url}/services/all`,
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+    types: [
+      types.GET_ALL_SERVICES.REQUEST, types.GET_ALL_SERVICES.SUCCESS, types.GET_ALL_SERVICES.FAILURE
+    ]
+  }
 })
 
 export const getServiceCategories = () => ({
 	  [RSAA]: {
-        endpoint: `${apiConfig.url}/service_categories/all`,
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-        types: [
-          types.GET_ALL_SERVICE_CATEGORIES.REQUEST, types.GET_ALL_SERVICE_CATEGORIES.SUCCESS, types.GET_ALL_SERVICE_CATEGORIES.FAILURE
-        ]
-    }
+    endpoint: `${apiConfig.url}/service_categories/all`,
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+    types: [
+      types.GET_ALL_SERVICE_CATEGORIES.REQUEST, types.GET_ALL_SERVICE_CATEGORIES.SUCCESS, types.GET_ALL_SERVICE_CATEGORIES.FAILURE
+    ]
+  }
 })
 
 export const getGalleries = () => ({
 	  [RSAA]: {
-        endpoint: `${apiConfig.url}/galleries/all`,
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-        types: [
-          types.GET_ALL_GALLERIES.REQUEST, types.GET_ALL_GALLERIES.SUCCESS, types.GET_ALL_GALLERIES.FAILURE
-        ]
-    }
+    endpoint: `${apiConfig.url}/galleries/all`,
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+    types: [
+      types.GET_ALL_GALLERIES.REQUEST, types.GET_ALL_GALLERIES.SUCCESS, types.GET_ALL_GALLERIES.FAILURE
+    ]
+  }
 })
 
 export const getBookings = () => ({
-      [RSAA]: {
-        endpoint: `${apiConfig.url}/bookings/all`,
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-        types: [
-          types.GET_ALL_BOOKINGS.REQUEST, types.GET_ALL_BOOKINGS.SUCCESS, types.GET_ALL_BOOKINGS.FAILURE
-        ]
-    }
+    [RSAA]: {
+    endpoint: `${apiConfig.url}/bookings/all`,
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+    types: [
+      types.GET_ALL_BOOKINGS.REQUEST, types.GET_ALL_BOOKINGS.SUCCESS, types.GET_ALL_BOOKINGS.FAILURE
+    ]
+  }
 })
 
 export const getUserReviews = () => ({
-      [RSAA]: {
-        endpoint: `${apiConfig.url}/auth/user_reviews/`,
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-        types: [
-          types.GET_ALL_USER_REVIEWS.REQUEST, types.GET_ALL_USER_REVIEWS.SUCCESS, types.GET_ALL_USER_REVIEWS.FAILURE
-        ]
-    }
+    [RSAA]: {
+    endpoint: `${apiConfig.url}/auth/user_reviews/`,
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+    types: [
+      types.GET_ALL_USER_REVIEWS.REQUEST, types.GET_ALL_USER_REVIEWS.SUCCESS, types.GET_ALL_USER_REVIEWS.FAILURE
+    ]
+  }
 })
 
 export const selectUser = (user) => {
-    return {
-        type: types.SELECTED_USER,
-        payload: user
-    }
+  return {
+    type: types.SELECTED_USER,
+    payload: user
+  }
 }
 
 
+export const getUserBookingByDay = (id, day) => ({
+  [RSAA]: {
+    endpoint: `${apiConfig.url}/auth/bookings/${id}/get?day=${day}`,
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+    types: [
+      types.GET_BOOKINGS_BY_USER_AND_DAY.REQUEST, 
+      types.GET_BOOKINGS_BY_USER_AND_DAY.SUCCESS, 
+      types.GET_BOOKINGS_BY_USER_AND_DAY.FAILURE
+    ]
+  }
+})
+
+export const setBooking = (user, booking, client) => ({
+    [RSAA]: {
+        endpoint: `${apiConfig.url}/bookings/create_booking`,
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          user: {
+            ...
+            user
+          },
+          booking: {
+            ...
+            booking
+          },
+          client: {
+            ...
+            client
+          }  
+        }),
+        types: [
+          types.SET_BOOKING.REQUEST, types.SET_BOOKING.SUCCESS, types.SET_BOOKING.FAILURE
+        ]
+    }
+})

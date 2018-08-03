@@ -14,6 +14,7 @@ import shopReducer from './shop.js'
 import users, * as fromUser from './user.js'
 import userReviewsReducer from './user_reviews.js'
 import selectUserReducer from './select_user.js'
+import setBookReducer from './set_book.js'
 
 export default combineReducers({
   auth: auth,
@@ -29,7 +30,8 @@ export default combineReducers({
   shops: shopReducer,
   users: users,
   userReviews: userReviewsReducer,
-  selectedUser: selectUserReducer
+  selectedUser: selectUserReducer,
+  setBook: setBookReducer
 })
 
 

@@ -51,3 +51,19 @@
 form div[name="type"]{
 	width: 100% !important;
 }
+
+.booking_time_button_primary{
+  border: 1px solid rgba(153,153,153,0.6) !important;
+  overflow: initial !important;
+  position: relative;
+}
+
+.profile-skills .skill-button-primary:after{
+  content: " ";
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  width: 2px;
+  height: 11px;
+  background: #000;
+}
