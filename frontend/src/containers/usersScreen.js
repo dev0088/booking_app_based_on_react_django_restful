@@ -77,7 +77,10 @@ class UsersScreen extends Component {
       return 0
     }
 
-    return sum_marks / sum_count
+    return {
+      averageReviewMarks: sum_marks / sum_count, 
+      reviewCount: sum_count
+    }
   }
 
   handleBooking = (user, event) => {
@@ -90,8 +93,8 @@ class UsersScreen extends Component {
     let items = []
     Object.keys(userReviews).map((key) => {
       let user = userReviews[key]
-      let averageReviewMarks = this.getAverageReviewMarks(user.bookings)
-      let numberOfReviews = user.bookings ? user.bookings.length : 0
+      const { averageReviewMarks, reviewCount } = this.getAverageReviewMarks(user.bookings)
+      // let numberOfReviews = user.bookings ? user.bookings.length : 0
       let item = (
         <Link to="/book_by_user" key={`user_list_item_${key}`}>
           <ListItem className="user_screen_listitem" onClick={(event)=>this.handleBooking(user, event)}>
@@ -118,7 +121,7 @@ class UsersScreen extends Component {
                   />
                   <CardTitle
                     title={''}
-                    subtitle={`${numberOfReviews} reviews`}
+                    subtitle={`${reviewCount} reviews`}
                     className="user_screen_card_review_text"
                     />
                 </CardText>
