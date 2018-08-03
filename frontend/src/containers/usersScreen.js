@@ -73,8 +73,12 @@ class UsersScreen extends Component {
         sum_count ++
       }
     })
+
     if (sum_count === 0){
-      return 0
+      return {
+        averageReviewMarks: 0, 
+        reviewCount: 0
+      }
     }
 
     return {
