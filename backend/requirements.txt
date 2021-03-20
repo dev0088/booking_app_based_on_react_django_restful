@@ -31,7 +31,7 @@ docutils==0.14
 h5py==2.8.0
 idna==2.6
 itypes==1.1.0
-Jinja2==2.9.6
+Jinja2==2.11.3
 jmespath==0.9.3
 jsonschema==2.6.0
 Keras==2.2.0
